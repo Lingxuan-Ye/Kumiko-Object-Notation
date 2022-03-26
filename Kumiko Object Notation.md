@@ -8,26 +8,26 @@ In addition, KON defines a custom type, `ano` , to indicate what type of data th
 
 # Data Types
 
-|  KON  |   python   |  JSON   |
-| :---: | :--------: | :-----: |
-|  num  | int, float | Number  |
-|  str  |    str     | String  |
-|  bul  |    bool    | Boolean |
-|  lst  |    list    |  Array  |
-|  dct  |    dict    | Object  |
-|  non  |  NoneType  |  null   |
-|  ano  |     -      |    -    |
+| KON  |   python   |  JSON   |
+| :--: | :--------: | :-----: |
+| num  | int, float | Number  |
+| str  |    str     | String  |
+| bul  |    bool    | Boolean |
+| lst  |    list    |  Array  |
+| obj  |    dict    | Object  |
+| non  |  NoneType  |  null   |
+| ano  |     -      |    -    |
 
 # Basic Unit
 
-`key-value pair` is the basic unit of KON. It is formed by a 2-tuple, of which the key is at index 0 and the value is at index 1.
+`key-value pair` is the basic unit of KON which is formed by a n-tuple, where n is greater than or equal to 2, of which the key is at index 0 and the value is at index 1. The rest of the elements in the tuple must be `str` and will be considered as comments.
 
 Notice that the key can only be `str` .
 
 For example:
 
 ```
-("foo", 0)
+("foo", 0, "This is a comment.", "This is another comment.")
 ```
 
 # lst
@@ -46,11 +46,11 @@ For example:
 )
 ```
 
-Particularly, `((0,),)` indicates an empty `lst` .
+Particularly, `(0,)` indicates an empty `lst` .
 
-# dct
+# obj
 
-`dct` is formed by a tuple, in which every element is a `key-value pair` .
+`obj` is formed by a tuple, in which every element is a `key-value pair` .
 
 For example:
 
@@ -62,7 +62,7 @@ For example:
 )
 ```
 
-Particularly, `(("",),)` indicates an empty `dct` .
+Particularly, `()` indicates an empty `obj` .
 
 # ano
 
@@ -75,7 +75,7 @@ Valid `ano` values:
 - `("str",)`
 - `("bul",)`
 - `("lst",)`
-- `("dct",)`
+- `("obj",)`
 - `("non",)`
 - `("ano",)`
 - `("any",)` : accept any kind of types
