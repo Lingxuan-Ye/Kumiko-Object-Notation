@@ -46,7 +46,7 @@ For example:
 )
 ```
 
-Particularly, `(0,)` indicates an empty `lst` .
+In addition, `(0,)` indicates an empty `lst` .
 
 # obj
 
@@ -62,7 +62,7 @@ For example:
 )
 ```
 
-Particularly, `()` indicates an empty `obj` .
+In addition, `()` indicates an empty `obj` .
 
 # ano
 
